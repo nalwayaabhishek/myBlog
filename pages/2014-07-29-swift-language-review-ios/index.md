@@ -14,7 +14,7 @@ As we see in the article we will realize that although Swift has not introduced 
 
 Here we will list down the top feature which Swift has borrowed from different programing languages:
 
-#### Inferred data types
+## Inferred data types
 In programming languages like Ruby, Haskell and JavaScript, no one wants to spend all of those keystrokes specifying data types for every variable. With Swift, iOS developers can now save a few keystrokes, too.
 
 ```
@@ -35,7 +35,7 @@ Though Swift support inferred data type but it is type safe language. So it does
 
 > Though Swift support inferred data type but it is type safe language.
 
-#### Tuple
+## Tuple
 Inspire by Lisp and Python, Swift also support tuples. Language like Lisp assumed that everything was a list aka tuple. Even Python has explicit syntax for matching up for the N value return from a method with N variable that will be bound to them.
 
 In many scenarios you want a method to return two values, incase of Objective-C there are two way to do it one is to make an object with two properties for return values, or return a dictionary containing two values. With Swift there is another way called Tuples.

@@ -12,7 +12,7 @@ Writing a Front end app is difficult, let me reiterate writing good quality fron
 
 I am working on ReactJS from around a year now, done lot of mistakes and lot refactoring in my apps. I prefer to use [Redux](https://github.com/reactjs/redux), [Webpack](https://webpack.github.io/), [Babel](https://babeljs.io/) and [ES2015](https://babeljs.io/docs/learn-es2015/) with React. Based on my experience, I have concluded few best practices which helped me to maintain large React based codebase. Here I am listing few of them.
 
-#### Avoid Nested state
+## Avoid Nested state
 
 It's better to have state value as flat instead of tree structure. Having your state nested it’d be hard to check whether your state changed or not. You’d be forced to make a deep equality check, because when objects are compared using reference equality you can’t be sure whether the next state is changed.
 
@@ -72,7 +72,7 @@ In case you are serving these values from backend API, then best place to normal
 If you want to normize the JSON in frontend you can also use npm module [normalizr](https://github.com/gaearon/normalizr).
 
 
-#### Immutability
+## Immutability
 
 `Immutability` is a concept, very popular in functional programming world. Making state of your component immutable will make your code simple to understand, as the state changes are more explicit and easy to test.
 
@@ -100,14 +100,14 @@ We can see that while update value of key `b`, the `map1` is not mutated if you 
 
 React also provide few [Immutability Helpers](https://facebook.github.io/react/docs/update.html)
 
-#### Centralize state
+## Centralize state
 
 Storing all your state at one place help in maintain the app's state easily because there is a single source of truth. That means that your app is always reflecting the current state. It makes debugging easy and helps in faster development.
 
 Storing the app at center place was inspired by a language called Elm, which also promotes the use of a single model. Redux provide you to manage single store out of box.
 
 
-#### Move logic to Actions Creator or may be to saga instead of Reducer
+## Move logic to Actions Creator or may be to saga instead of Reducer
 
 In Redux, Reducer should only update the state, there should be no logic in reducers.
 Have thinner Reducer as compared to Action Creators.
@@ -118,14 +118,14 @@ You can use [redux-sagas](https://github.com/yelouafi/redux-saga) or [redux-thun
 </div>
 
 
-#### Stateless Component
+## Stateless Component
 
 It is good to have more stateless components in your app, it increases reusability of the component since your component is dumb. It is also easy to test and debug a stateless component.
 
 > Check out this -> [Egghead tutorial on stateless component](https://egghead.io/lessons/react-building-stateless-function-components-new-in-react-0-14)
 
 
-#### Be safe with PROP TYPES and getDefaultProps
+## Be safe with PROP TYPES and getDefaultProps
 
 `prop` lets components communicate with other component. A parent component pass it’s children named prop values, which the child can then use in its internal logic. `propTypes` keep your component safe from unexpected data.
 

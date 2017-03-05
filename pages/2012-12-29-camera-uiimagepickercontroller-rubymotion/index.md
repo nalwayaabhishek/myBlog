@@ -7,7 +7,7 @@ desc: "The `UIImagePickerController` class provides basic, customizable user int
 ---
 The `UIImagePickerController` class provides basic, customizable user interfaces for taking pictures and movie. It also provide user some simple editing capability for newly-captured media.
 
-#### Source type imagePicker
+## Source type imagePicker
 The role and appearance of an image picker controller depend on the source type you assign to it before you present it.There are there way to choose image:
 
 1) Choose from Camera
@@ -26,7 +26,7 @@ imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 ```
 imagePicker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
 ```
-####Delegate
+##Delegate
 
 There are two delegate available:
 
@@ -39,7 +39,7 @@ There are two delegate available:
 
 imagePickerControllerDidCancel:
 
-#### Some code 	
+## Some code 	
 Create a file `camera_controller.rb` in app folder
 ```
 class CameraController < UIViewController
