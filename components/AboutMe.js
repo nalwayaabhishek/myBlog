@@ -11,6 +11,7 @@ class AboutMe extends React.Component {
          <div className="col s2">
            <img
              src={prefixLink(profilePic)}
+             alt="Abhishek-nalwaya"
              style={{
                width: '150px',
                borderRadius: '50%'
@@ -18,6 +19,7 @@ class AboutMe extends React.Component {
            />
            <img
              src={prefixLink(ReactNative)}
+             alt="ReactNative"
              style={{
                width: '150px',
              }}
