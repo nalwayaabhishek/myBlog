@@ -14,6 +14,7 @@ class AboutMe extends React.Component {
              alt="Abhishek-nalwaya"
              style={{
                width: '150px',
+               maxWidth: `100%`,
                borderRadius: '50%'
              }}
            />
@@ -22,6 +23,7 @@ class AboutMe extends React.Component {
              alt="ReactNative"
              style={{
                width: '150px',
+              maxWidth: `100%`
              }}
            />
          </div>
