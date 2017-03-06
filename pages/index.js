@@ -31,11 +31,11 @@ class BlogIndex extends React.Component {
         <AboutMe />
         <h1> My Blog </h1>
         <span className="border"></span>
-        <ul>
+        <div>
           {visiblePages.map((page) => (
               <PostCard page={page} key={page.path}/>
           ))}
-        </ul>
+        </div>
       </div>
     )
   }
