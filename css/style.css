@@ -14,7 +14,13 @@ h1 {
 h2 {
   font-family: 'Montserrat',sans-serif,Arial;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 21px;
+  font-style: normal;
+}
+h4 {
+  font-family: 'Montserrat',sans-serif,Arial;
+  font-weight: 400;
+  font-size: 19px;
   font-style: normal;
 }
 .border {
@@ -35,6 +41,13 @@ a {
 blockquote {
   border-left: 5px solid #4db6ac
 }
-.about {
-
+ul:not(.browser-default) {
+	padding-left: 30px;
+	margin-top: 10px;
+	margin-bottom: 15px;
 }
+
+ul:not(.browser-default) li {
+    list-style-type: disc;
+}
+img[alt=screen] { width: 100%; }
