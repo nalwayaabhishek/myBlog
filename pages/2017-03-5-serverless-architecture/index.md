@@ -9,7 +9,7 @@ readNext: "/javascript/2016/05/02/react-js-best-practices.html"
 
 `Serverless` architecture allows you to run applications or services without having to manage infrastructure. It abstract the developers to think about servers, infrastructure, scaling, low level configuration. Serverless often associated with the `NoOps` movement and the concept also be referred to as Function as a Service or `FaaS`.  Serverless computing is an event driven application design and deployment paradigm where all the computing resources are provided as scalable cloud services.
 
-> Though the name suggest serverless, but it does not actually mean running code without servers. The name `serverless` is used because you don't owns the system, provision servers, install softwares and maintain it. It is completely managed by provided.
+> Though the name serverless suggest running code without servers, but it does not actually mean running code without servers. The name `serverless` is used because you don't owns the system, provision servers, install softwares and maintain it. It is completely managed by provided.
 
 With serverless computing you write functions and then you can scale this independent functions automatically and you will be only charged for the duration it is running. Since we are writting functions instead of complete application we call it Function as a Service or `FaaS`. To better understand where it fit, lets discuss **few** popular way to deploy and manage your application:
 
