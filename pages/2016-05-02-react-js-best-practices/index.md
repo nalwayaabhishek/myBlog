@@ -131,5 +131,88 @@ It is good to have more stateless components in your app, it increases reusabili
 
 Also for any propType that isn't required, always set it in [getDefaultProps](https://facebook.github.io/react/docs/reusable-components.html#default-prop-values). It help to define default values for your props in a very declarative way.
 
+## Imports
+You can import specific function from the file instead of full libraries. This will reduce the size of your application.
+```
+import Foo from ‘foo/Foo’
+```
+instead of:
+```
+import {Foo} from ‘foo’
+```
+More Examples:
+```
+import concat from 'lodash/concat';  
+import sortBy from 'lodash/sortBy';
+```
 
-I would love to hear your experiences and patterns which you have used in your app with reactJS.
+## Always bind the functions in the constructor method
+If you use an ES6+ class, React no longer autobind your methods. One of the solutions is to call bind in render as shown here:
+
+```
+<div onClick={this._handleClick.bind(this)}> Hello!</div>
+```
+
+But this approach has performance implications since the function is reallocated on every render. You can refector this to:
+
+```
+class Foo extends React.Component {
+  constructor() {
+    super();
+    this._onClick = this._handleClick.bind(this);
+  }
+  render() {
+    return (
+      <div onClick={this._handleClick}>
+        Hello!
+      </div>
+    );
+  }
+  _handleClick() {
+    console.log('Inside _handleClick ')
+  }
+}
+```
+
+> Avoid using bind or arrow functions in render. A bind call or arrow function in a render will create a brand new function on every single render. React will load the complete view and this will have bad performance.
+
+You can add this to your lint [eslint-plugin-react](https://github.com/yannickcr/eslint-plugin-react/) to caught this anti pattern.
+
+## Avoid using variable directly in component
+With the same reason as bind also avoid using variable(array, hash etc) directly as shown:
+
+```
+class Foo extends React.Component  {
+  render() {
+    return (
+      <div>
+        <SomeComponent someProp={ this.props.names || []} />
+       </div>
+     );
+  }
+}
+```
+There is a small issue in line `this.props.names || []`. React treat `[]` this as new variable and will re render `SomeComponent` on any change. This will completely destroyed every pure render optimization inside the `SomeComponent` component.
+
+> `[]` will treat as new variable and shallow equality check always produces false and tells React to re-render the components.
+
+
+So you can refector this is:
+
+```
+const default = [];
+
+class Foo extends React.Component  {
+  render() {
+    return (
+      <div>
+        <SomeComponent someProp={ this.props.names || default} />
+       </div>
+     );
+  }
+}
+```
+
+You can also use getDefaultProps instead of defining a variable.
+
+> I would love to hear your experiences and patterns which you have used in your app with reactJS.

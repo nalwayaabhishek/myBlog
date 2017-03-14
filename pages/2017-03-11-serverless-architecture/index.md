@@ -96,5 +96,5 @@ You can directly use the provider api's, but to speedup you can use any of these
 I personally had good experience with [Serverless](https://github.com/serverless/serverless) it has good [documentation](https://serverless.com/framework/docs/) and support AWS, Azure and OpenWhisk.
 To start with these are few [examples](https://github.com/serverless/examples)
 
-# Conclusion
+## Conclusion
 Serverless is not the correct approach for every problem, it will not replace other ways completely. But for things which are event based, serverless is very good options to use. Definitely Serverless Architecture is promising and will make developer life simple in future as more design patterns will involved.
