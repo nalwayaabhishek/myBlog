@@ -213,6 +213,41 @@ class Foo extends React.Component  {
 }
 ```
 
-You can also use getDefaultProps instead of defining a variable.
+> You can also use getDefaultProps instead of defining a variable.
+
+
+## Adding Getters
+Its very neat to prefix [get](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/get) before functions  and this would eliminate the extra function execution with every call to get.
+
+```
+// bad
+ mobileNumber () {
+   return `(${this.props.isdCode})${this.props.mobileNumber}`;
+ }
+
+ // good
+ get mobileNumber () {
+   return `(${this.props.isdCode})${this.props.mobileNumber}`;
+ }
+```
+
+## Use classnames
+[classNames](https://github.com/JedWatson/classnames) is good library for defining css classes. You can express the conditional classes more simply as an object:
+
+```
+var classNames = require('classnames');
+
+var Button = React.createClass({
+  // ...
+  render () {
+    var btnClass = classNames({
+      btn: true,
+      'btn-pressed': this.state.isPressed,
+      'btn-over': !this.state.isPressed && this.state.isHovered
+    });
+    return <button className={btnClass}>{this.props.label}</button>;
+  }
+});
+```
 
 > I would love to hear your experiences and patterns which you have used in your app with reactJS.
